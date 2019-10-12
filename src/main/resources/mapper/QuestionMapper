@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lb.mapper.QuestionMapper">
+    <insert id="insert" parameterType="com.lb.model.Question">
+        insert into QUESTION(title, create_time, gmt_modified, creator, comment_count, view_count, like_count, tag)
+        values (#{})
+    </insert>
+</mapper>

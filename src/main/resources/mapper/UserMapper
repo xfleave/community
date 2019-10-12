@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lb.mapper.UserMapper">
-    <insert id="insert" parameterType="com.lb.model.User">
+<insert id="insert" parameterType="com.lb.model.User">
         insert into USER(account_id, name, token, create_date, gmt_modified) value (#{accountId},#{name},#{token},#{createTime},#{getModifie})
     </insert>
+    <select id="findByToken" parameterType="String" resultType="com.lb.model.User">
+        select * from user where token = #{token}
+    </select>
 </mapper>
