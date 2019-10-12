@@ -46,7 +46,8 @@ public class AuthorizeController {
         if (gitHubUser != null) {
             //登录成功
             User user=new User();
-            user.setToken(UUID.randomUUID().toString());
+            String token = UUID.randomUUID().toString();
+            user.setToken(token);
             user.setName(gitHubUser.getName());
             user.setAccountId(String.valueOf(gitHubUser.getId()));
             user.setCreateTime(System.currentTimeMillis());
